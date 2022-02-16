@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Получть статистику по сайту</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/createSite}" th:object="${htmlparser}">
+    <label for="url">Введите адресс сайта: </label>
+    <input type="url" th:field="*{stringUrl}" id="url">
+    <label th:if="${alert != null}" th:text="${alert}">alert</label>
+    <br/>
+    <input type="submit" value="Парсить"/>
+</form>
+
+<div>
+    <a href="index">На главную</a>
+</div>
+
+</body>
+</html>

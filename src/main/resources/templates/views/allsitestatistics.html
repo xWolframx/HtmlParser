@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика по всем сайтам</title>
+</head>
+<body>
+
+<table border="1" bordercolor="black">
+    <tr>
+        <td id="url">Url (Полный адрес)</td>
+        <td id="domain">Домнен</td>
+        <td id="title">Название страницы</td>
+        <td id="countWords">Кол-во уникальных слов</td>
+    </tr>
+
+    <th:block th:each="site : ${sites}">
+        <tr>
+            <td th:headers="url"><a th:href="@{/{siteId}(siteId=${site.getId()})}" th:text="${site.getUrl()} + ' (Кликни чтобы посмотреть статистикку по сайту)'">url</a></td>
+            <td th:headers="domain" th:text="${site.getDomain()}">domain</td>
+            <td th:headers="title" th:text="${site.getTitle()}">title</td>
+            <td th:headers="countWords" th:text="${site.getCountWords()}">countWord</td>
+            <td>
+                <form th:method="DELETE" th:action="@{/{siteId}(siteId=${site.getId()})}">
+                    <input type="submit" value="Удалить"/>
+                </form>
+            </td>
+        </tr>
+    </th:block>
+</table>
+
+<div>
+    <a href="index">На главную</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика по сайту</title>
+</head>
+<body>
+
+<div>
+    <label for="url"><b>Полный адресс введённого сайта:</b></label>
+    <div th:text="${site.getUrl()}" id="url">URL</div>
+
+    <label for="domain"><b>Домен:</b></label>
+    <div th:text="${site.getDomain()}" id="domain">DOMAIN</div>
+
+    <label for="title"><b>Название страницы:</b></label>
+    <div th:text="${site.getTitle()}" id="title">TITLE</div>
+
+    <p>Статистика по словам:</p>
+
+    <table border="1" bordercolor="black">
+        <tr>
+            <td id="name">Слово</td>
+            <td id="count">Сколько раз встретилось</td>
+        </tr>
+
+        <th:block th:each="word : ${words}">
+            <tr>
+                <td th:headers="name" th:text="${word.getName()}">NAME</td>
+                <td th:headers="count" th:text="${word.getCount()}">COUNT</td>
+            </tr>
+        </th:block>
+    </table>
+</div>
+
+<br>
+
+<div>
+    <a href="allsitestatistics">Назад</a>
+</div>
+
+<div>
+    <a href="index">На главную</a>
+</div>
+
+</body>
+</html>
