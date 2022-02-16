@@ -2,12 +2,12 @@
 Веб приложение позволяет получить статистику уникальных слов на сайте.
 Статистика сайтов сохраняется в БД.
 Использованные технологии:
-При разработке использовался паттерн проектирования MVC
-Логгирование происходит при помощи Logger в файл logs.txt
-Java 11
-Spring Boot 2.6.3
-Spring MVC
-Spring JDBC
-Thymeleaf
-HyperSQL DataBase
-JSOUP 1.14.3
+* При разработке использовался паттерн проектирования MVC
+* Логгирование происходит при помощи Logger в файл logs.txt
+* Java 11
+* Spring Boot 2.6.3
+* Spring MVC
+* Spring JDBC
+* Thymeleaf
+* HyperSQL DataBase
+* JSOUP 1.14.3
